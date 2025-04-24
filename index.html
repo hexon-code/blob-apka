@@ -30,8 +30,8 @@
 
         <div class="bottom-bar">
             <button onclick="ChangePage('home.html')"><img src="Assets/domek.png" width="32" height="32" id="home_button"></button>
-            <button onclick="ChangePage('blobek.html')"><img src="Assets/blobek.png" width="32" height="32" id="blobek_button"></button>
             <button onclick="ChangePage('library.html')"><img src="Assets/ksiazki.png" width="32" height="32" id="library_button"></button>
+            <button onclick="ChangePage('blobek.html')"><img src="Assets/blobek.png" width="32" height="32" id="blobek_button"></button>
             <button onclick="ChangePage('shop.html')"><img src="Assets/sklep.png" width="32" height="32" id="shop_button"></button>
             <button onclick="ChangePage('profile.html')"><img src="Assets/osoba.png" width="32" height="32" id="profile_button"></button>
         </div>
@@ -42,7 +42,7 @@
     const all = document.getElementById('all');
     const contentDiv = document.getElementById('content');
     
-    let currentPage = 'home.html';
+    let currentPage = 'blobek.html';
 
     function btn_menu() {
         const isMenuHidden = menu.style.display === 'none';
