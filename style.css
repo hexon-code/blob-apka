@@ -1,0 +1,187 @@
+:root {    
+    --top-bar-bg: #00c8ff;
+    --menu-bar-button-bg: #00a9d8;
+    --bottom-bar-bg: #415155;
+    --bottom-bar-button-border-bg: #303f42;
+    --content-bg: #ececec;
+
+    --top-bar-height: 60px;
+    --bottom-bar-height: 80px;
+
+    --bottom-bar-button-count: 5;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: fixed;
+    user-select: none;
+}
+
+img {
+    user-select: none;
+    pointer-events: none;
+}
+
+.content {
+    margin-top: var(--top-bar-height);
+    display: flex;
+    height: calc(100vh - var(--top-bar-height) - var(--bottom-bar-height) - 40px);
+    padding: 20px;
+    padding-right: 5px;
+    overflow-y: scroll;
+    background-color: var(--content-bg);
+}
+
+.top-bar {
+    margin-top: 0;
+    width: 100%;
+    height: var(--top-bar-height);
+    background-color: var(--top-bar-bg);
+    display: flex;
+    justify-content: space-between;
+    overflow-y: visible;
+    position: fixed;
+    top: 0;
+    text-align: center;
+
+}
+
+.bottom-bar {
+    width: 100%;
+    height: 80px;
+    background-color: var(--bottom-bar-bg);
+    display: flex;
+    overflow-y: visible;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-bar button {
+    margin: calc(100vw / ( var(--bottom-bar-button-count) * 10));
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 4px solid var(--bottom-bar-button-border-bg);
+    border-radius: 4px;
+    background-color: var(--bottom-bar-bg);
+}
+
+.bottom-bar button:active {
+    background-color: var(--bottom-bar-button-border-bg);
+    transition: background-color 0.1s ease-in-out;
+}
+
+.bottom-bar img{
+    filter: invert(1);
+}
+
+.btn-menu {
+    background-color: var(--top-bar-bg);
+    width: 32px;
+    height: 32px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+}
+
+.btn-menu img {
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--top-bar-bg);
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: calc(100vw - 90px);
+    height: 40px;
+    font-size: 16px;
+    padding: 4;
+    text-align: left;
+    margin: 45px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-style: normal;
+    background-color: var(--menu-bar-button-bg);
+    border: none;
+    border-radius: 10px;
+}
+
+.menu-button img {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+}
+
+
+.menu-button:active {
+    transform: scaleY(1.05);
+    transform: scaleX(1.02);
+    transition: transform 0.05s ease-in-out;
+}
+
+.menu-button-profile {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: calc(100vw - 40px);
+    height: 60px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: left;
+    background-color: var(--menu-bar-button-bg);
+    border: none;
+    border-radius: 10px;
+}
+
+.menu-button-profile img {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.menu-button-profile:active {
+    transform: translateX(-50%) scale(1.05);
+    transition: transform 0.05s ease-in-out;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin: 0; /* Usuń marginesy */
+    position: absolute; /* Ustawienie pozycji absolutnej */
+    top: 50%; /* Wyśrodkowanie w pionie */
+    left: 50%; /* Wyśrodkowanie w poziomie */
+    transform: translate(-50%, -50%); /* Przesunięcie w celu dokładnego wyśrodkowania */
+    text-align: center; /* Wyśrodkowanie tekstu */
+}

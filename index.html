@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#00c8ff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="stylesheet" href="style.css">
+    <title>BlobApka</title>
+</head>
+<body>
+    <div class="menu" style="display: none;" id="menu">
+        <button class="btn-menu" onclick="btn_menu()"><img src="Assets/X-Symbol.svg"></button>
+
+        <button class="menu-button"><img src="Assets/blobek.svg" width="32" height="32">jest to 1 guzik</button>
+        <button class="menu-button"><img src="Assets/blobek.svg" width="32" height="32">jest to 2 guzik</button>
+        <button class="menu-button"><img src="Assets/blobek.svg" width="32" height="32">jest to 3 guzik</button>
+        <button class="menu-button"><img src="Assets/blobek.svg" width="32" height="32">jest to 4 guzik</button>
+
+        <button class="menu-button-profile"><img src="Assets/blobek.svg" width="50" height="50">*nazwa uzytkownika*</button>
+    </div>
+    <div class="all" style="display: block;" id="all">
+        <div class="top-bar">
+            <button class="btn-menu" onclick="btn_menu()"><img src="Assets/menu.svg"></button>
+            <p class="title" id="title">*Tytuł strony*</p>
+        </div>
+
+        <div class="content">
+        </div>
+
+        <div class="bottom-bar">
+            <button><img src="Assets/domek.png" width="32" height="32"></button>
+            <button><img src="Assets/blobek.png" width="32" height="32"></button>
+            <button><img src="Assets/ksiazki.png" width="32" height="32"></button>
+            <button><img src="Assets/sklep.png" width="32" height="32"></button>
+            <button><img src="Assets/osoba.png" width="32" height="32"></button>
+        </div>
+    </div>
+</body>
+<script>
+    const menu = document.getElementById('menu');
+    const all = document.getElementById('all');
+    function btn_menu() {
+        if (menu.style.display === 'none') {
+            menu.style.display = 'block';
+            all.style.display = 'none';
+        } else {
+            menu.style.display = 'none';
+            all.style.display = 'block';
+        }
+    }
+</script>
+</html>
+
