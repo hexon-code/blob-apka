@@ -11,7 +11,7 @@
 <body>
     <div class="menu" style="display: none;" id="menu">
         <button class="btn-menu" onclick="btn_menu()"><img src="Assets/X-Symbol.svg"></button>
-
+        <h1>BlobApka</h1>
         <button class="menu-button"><img src="Assets/blobek.svg" width="32" height="32">jest to 1 guzik</button>
         <button class="menu-button"><img src="Assets/blobek.svg" width="32" height="32">jest to 2 guzik</button>
         <button class="menu-button"><img src="Assets/blobek.svg" width="32" height="32">jest to 3 guzik</button>
@@ -25,30 +25,54 @@
             <p class="title" id="title">*Tytuł strony*</p>
         </div>
 
-        <div class="content">
+        <div class="content" id="content">
         </div>
 
         <div class="bottom-bar">
-            <button><img src="Assets/domek.png" width="32" height="32"></button>
-            <button><img src="Assets/blobek.png" width="32" height="32"></button>
-            <button><img src="Assets/ksiazki.png" width="32" height="32"></button>
-            <button><img src="Assets/sklep.png" width="32" height="32"></button>
-            <button><img src="Assets/osoba.png" width="32" height="32"></button>
+            <button onclick="ChangePage('home.html')"><img src="Assets/domek.png" width="32" height="32" id="home_button"></button>
+            <button onclick="ChangePage('blobek.html')"><img src="Assets/blobek.png" width="32" height="32" id="blobek_button"></button>
+            <button onclick="ChangePage('library.html')"><img src="Assets/ksiazki.png" width="32" height="32" id="library_button"></button>
+            <button onclick="ChangePage('shop.html')"><img src="Assets/sklep.png" width="32" height="32" id="shop_button"></button>
+            <button onclick="ChangePage('profile.html')"><img src="Assets/osoba.png" width="32" height="32" id="profile_button"></button>
         </div>
     </div>
 </body>
 <script>
     const menu = document.getElementById('menu');
     const all = document.getElementById('all');
+    const contentDiv = document.getElementById('content');
+    
+    let currentPage = 'home.html';
+
     function btn_menu() {
-        if (menu.style.display === 'none') {
-            menu.style.display = 'block';
-            all.style.display = 'none';
-        } else {
-            menu.style.display = 'none';
-            all.style.display = 'block';
-        }
+        const isMenuHidden = menu.style.display === 'none';
+        menu.style.display = isMenuHidden ? 'block' : 'none';
+        all.style.display = isMenuHidden ? 'none' : 'block';
     }
+    
+    function ChangePage(page) {
+        currentPage = page;
+        contentDiv.innerHTML = '<p class="loading">Loading...</p>';
+        fetch('Pages/' + currentPage)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error loading the page.');
+                }
+                return response.text();
+            })
+            .then(html => {
+                contentDiv.innerHTML = html;
+            })
+            .catch(error => {
+                contentDiv.innerHTML = '<p>Failed to load content.</p>';
+                console.error(error);
+            });
+    }
+
+    ChangePage(currentPage);
+
+
+
 </script>
 </html>
 

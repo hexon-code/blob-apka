@@ -105,6 +105,8 @@ img {
     height: 100vh;
     position: fixed;
     background-color: var(--top-bar-bg);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .menu-button {
@@ -123,6 +125,7 @@ img {
     background-color: var(--menu-bar-button-bg);
     border: none;
     border-radius: 10px;
+    overflow-y: hidden;
 }
 
 .menu-button img {
@@ -184,4 +187,26 @@ img {
     left: 50%; /* Wyśrodkowanie w poziomie */
     transform: translate(-50%, -50%); /* Przesunięcie w celu dokładnego wyśrodkowania */
     text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+.menu h1{
+    text-align: center;
+}
+
+
+.profile{
+
+}
+
+.profile .banner{
+    width: 100%;
+    height: 150px;
+}
+
+.profile .profile-pic{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: -50px;
+    margin-left: 45px;
 }
