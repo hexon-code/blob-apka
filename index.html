@@ -52,7 +52,7 @@
     
     function ChangePage(page) {
         currentPage = page;
-        contentDiv.innerHTML = '<p class="loading">Loading...</p>';
+        contentDiv.innerHTML = '<div class="ring">Ładowanie...<span></span></div>';
         fetch('Pages/' + currentPage)
             .then(response => {
                 if (!response.ok) {
